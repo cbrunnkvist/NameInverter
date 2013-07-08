@@ -1,5 +1,4 @@
 var assert = require('assert'),
-	// nodeunit = require('nodeunit'),
 	NameInverter = require('../index.js');
 
 function assertInverted(t, original, expected) {

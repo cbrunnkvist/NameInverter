@@ -4,13 +4,17 @@ function isValidString(o) {
 	return (typeof(o) == 'string' && o.match(/\w/))
 }
 
-function formatSplitString(parts) {
-	// parts.slice(2,parts.length).join(' ');
+function getPostnominals(parts) {
+	var pnParts = parts.slice(2, parts.length);
+	return pnParts.join(' ');
+}
+
+function formatMultiPartName(parts) {
 	var first = parts[0],
 		last = parts[1],
-		postnominals = parts.slice(2, parts.length).join(' ');
+		pn = getPostnominals(parts);
 	var lastFirst = util.format('%s, %s', last, first);
-	return (postnominals ? (lastFirst + ' ' + postnominals) : lastFirst);
+	return (pn ? (lastFirst + ' ' + pn) : lastFirst);
 }
 
 function stripHonorifics(s) {
@@ -21,7 +25,7 @@ function stripHonorifics(s) {
 function invertString(name) {
 	var parts = stripHonorifics(name).split(/\s+/);
 	if (parts.length > 1)
-		return formatSplitString(parts);
+		return formatMultiPartName(parts);
 	else
 		return name
 }
