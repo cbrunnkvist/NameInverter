@@ -4,9 +4,17 @@ function isValidString(o) {
 	return (typeof(o) == 'string' && o.match(/\w/))
 }
 
-function getPostnominals(parts) {
-	var pnParts = parts.slice(2, parts.length);
-	return pnParts.join(' ');
+function invertString(name) {
+	var parts = stripHonorifics(name).split(/\s+/);
+	if (parts.length > 1)
+		return formatMultiPartName(parts);
+	else
+		return name
+}
+
+function stripHonorifics(s) {
+	var trimmed = s.replace(/^\w+\.\s+/, '');
+	return trimmed;
 }
 
 function formatMultiPartName(parts) {
@@ -17,17 +25,9 @@ function formatMultiPartName(parts) {
 	return (pn ? (lastFirst + ' ' + pn) : lastFirst);
 }
 
-function stripHonorifics(s) {
-	var trimmed = s.replace(/^\w+\.\s+/, '');
-	return trimmed;
-}
-
-function invertString(name) {
-	var parts = stripHonorifics(name).split(/\s+/);
-	if (parts.length > 1)
-		return formatMultiPartName(parts);
-	else
-		return name
+function getPostnominals(parts) {
+	var pnParts = parts.slice(2, parts.length);
+	return pnParts.join(' ');
 }
 
 
