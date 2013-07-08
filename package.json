@@ -1,0 +1,12 @@
+{
+  "name": "nameinverter",
+  "version": "0.0.1",
+  "author": "Conny Brunnkvist <cbrunnkvist@gmail.com>",
+  "description": "Example TDD kata: Name inverter - inverts names",
+  "scripts": {
+    "test": "node_modules/nodeunit/bin/nodeunit test"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.1"
+  }
+}
