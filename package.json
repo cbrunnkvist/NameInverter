@@ -4,7 +4,7 @@
   "author": "Conny Brunnkvist <cbrunnkvist@gmail.com>",
   "description": "Example TDD kata: Name inverter - inverts names",
   "scripts": {
-    "test": "node_modules/nodeunit/bin/nodeunit test"
+    "test": "node_modules/.bin/nodeunit test"
   },
   "devDependencies": {
     "nodeunit": "~0.8.1"
